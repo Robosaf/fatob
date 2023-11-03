@@ -1,0 +1,60 @@
+﻿@using fatob_new.Data.Enums;
+@model Travel
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+<h1>Are you sure you want to delete this club?</h1>
+
+<form method="post" asp-action="Delete" enctype="multipart/form-data">
+    <input type="hidden" value="AddressId" id="AddressId" />
+    <div class="form-group">
+        <label asp-for="StartCity">Start City</label>
+        <input asp-for="StartCity" class="form-control" placeholder="StartCity">
+        <span asp-validation-for="StartCity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EndCity">End City</label>
+        <input asp-for="EndCity" class="form-control" placeholder="End City">
+        <span asp-validation-for="EndCity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Bus.Color">Bus Color</label>
+        <select asp-for="Bus.Color" asp-items="@Html.GetEnumSelectList<ColorEnum>()" class="form-control">
+            <option selected="selected" value="">--Select--</option>
+        </select>
+        <span asp-validation-for="Bus.Color" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Bus.RegisterNumber">Register Number of The Bus</label>
+        <input asp-for="Bus.RegisterNumber" class=" form-control" placeholder="RegisterNumber">
+        <span asp-validation-for="Bus.RegisterNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StartOfTravel">Start Time</label>
+        <input asp-for="StartOfTravel" class="form-control" placeholder="Time">
+        <span asp-validation-for="StartOfTravel" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EndOfTravel">End Time</label>
+        <input asp-for="EndOfTravel" class="form-control" placeholder="Time">
+        <span asp-validation-for="EndOfTravel" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Cost">Cost of the travel</label>
+        <input asp-for="Cost" class="form-control" placeholder="Cost">
+        <span asp-validation-for="Cost" class="text-danger"></span>
+
+    </div>
+</form>
+<div class="form-group">
+    <form asp-controller="Travel" asp-action="Delete" method="post">
+        <input type="hidden" asp-for="TravelId" />
+        <input type="submit" value="Confirm" class="btn btn-danger float-right mt-3" />
+    </form>
+</div>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fatob_new", "fatob_new\fatob_new.csproj", "{08DBD289-FCB7-4210-8E6B-4766F2DD5903}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08DBD289-FCB7-4210-8E6B-4766F2DD5903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08DBD289-FCB7-4210-8E6B-4766F2DD5903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08DBD289-FCB7-4210-8E6B-4766F2DD5903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08DBD289-FCB7-4210-8E6B-4766F2DD5903}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80A575EB-0B71-49C2-A3B1-957B336FBEAF}
+	EndGlobalSection
+EndGlobal

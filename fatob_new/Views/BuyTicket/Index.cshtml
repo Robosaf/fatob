@@ -1,0 +1,58 @@
+﻿@model fatob_new.HelperModel.TicketBuyerModel
+
+<h1>Travel that you selected:</h1>
+<div class="col-lg-7 col-md-7 col-sm-6" style="border-style: inset; padding: 0 0 0 10px">
+    <h4 class="box-title mt-5">Travel description</h4>
+    <p>Lorem Ipsum available,but the majority have suffered alteration in some form,by injected humour,or randomised words which don't look even slightly believable.but the majority have suffered alteration in some form,by injected humour</p>
+    <h2 class="mt-5">
+        Cost: @Model.Travel.Cost zł
+    </h2>
+    
+    <h3 class="box-title mt-5">From @Model.Travel.StartCity To @Model.Travel.EndCity with:</h3>
+    <ul>
+        <li>
+            <i class="fa fa-check text-success">
+            </i>Comfortable seats
+        </li>
+        <li>
+            <i class="fa fa-check text-success">
+            </i>Toilet
+        </li>
+        <li>
+            <i class="fa fa-check text-success">
+            </i>Wi-Fi
+        </li>
+    </ul>
+</div>
+<br />
+<h2>
+    Please write information about you to continue buying
+</h2>
+
+<form method="post" asp-action="Index">
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" placeholder="Ex.: name.surname@gmail.com">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" class="form-control" placeholder="Enter your name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Surname">Surname</label>
+        <input asp-for="Surname" class="form-control" placeholder="Enter your surname">
+        <span asp-validation-for="Surname" class="text-danger"></span>
+    </div>
+
+    <div class="form-group" style="margin-bottom: 20px">
+        <label asp-for="PhoneNumber">Phone Number</label>
+        <input type="tel" asp-for="PhoneNumber" name="phone" class="form-control" placeholder="888-000-888" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

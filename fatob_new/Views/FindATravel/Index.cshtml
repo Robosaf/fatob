@@ -1,0 +1,50 @@
+﻿@model fatob_new.HelperModel.TravelFindModel
+<h1>Here you can find a travel</h1>
+
+<form method="post" asp-action="Index" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label asp-for="CityFrom">From:</label>
+        <input asp-for="CityFrom" class="form-control" placeholder="Name of city">
+        <span asp-validation-for="CityFrom" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CityTo">To:</label>
+            <input asp-for="CityTo" class="form-control" placeholder="Name of city">
+        <span asp-validation-for="CityTo" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DateFrom">Date of Travel:</label>
+            <input type="date" asp-for="DateFrom" class="form-control">
+        <span asp-validation-for="DateFrom" class="text-danger"></span>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Search</button>
+</form>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model.Travels)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="/img/csm_eb24002_58f4fb61dd.jpg" alt="Bus Picture">
+                        <div class="card-body">
+                            <p class="card-text">From @item.StartCity To @item.EndCity</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a type="button" class="btn btn-sm btn-outline-secondary" asp-controller="Travel" asp-action="TravelDetail" asp-route-id="@item.TravelId">View</a>
+                                </div>
+                                <small class="text-muted">@item.EndOfTravel.DayOfWeek, @item.EndOfTravel.Day/@item.EndOfTravel.Month/@item.EndOfTravel.Year</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,52 @@
+﻿@using fatob_new.Data.Enums;
+@model Travel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<form method="post" asp-action="Create">
+    <div class="form-group">
+        <label asp-for="StartCity">Start City</label>
+        <input asp-for="StartCity" class="form-control" placeholder="Start City">
+        <span asp-validation-for="StartCity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EndCity">End City</label>
+        <input asp-for="EndCity" class="form-control" placeholder="End City">
+        <span asp-validation-for="EndCity" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Bus.Color">Color Of Bus</label>
+        <select asp-for="Bus.Color" class="form-control" asp-items="@Html.GetEnumSelectList<ColorEnum>()">
+            <option>-- Select --</option>
+        </select>
+        <span asp-validation-for="Bus.Color" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Bus.RegisterNumber">Register Number</label>
+        <input asp-for="Bus.RegisterNumber" class="form-control" placeholder="Register Number">
+        <span asp-validation-for="Bus.RegisterNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StartOfTravel">Start Of Travel</label>
+        <input asp-for="StartOfTravel" class="form-control" placeholder="Start Of Travel(Time)">
+        <span asp-validation-for="StartOfTravel" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EndOfTravel">End Of Travel</label>
+        <input asp-for="EndOfTravel" class="form-control" placeholder="End Of Travel(Time)">
+        <span asp-validation-for="EndOfTravel" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Cost">Cost</label>
+        <input asp-for="Cost" class="form-control" placeholder="Cost Of Travel">
+        <span asp-validation-for="StartCity" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
